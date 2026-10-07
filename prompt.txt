@@ -1,0 +1,24 @@
+You are extracting structured data from an EU public procurement notice (TED).
+Output ONLY tab-separated values: one header row, then one row per lot. No commentary, no code fences.
+
+Columns, in this exact order:
+procedure_id	notice_id	lot_id	buyer_name	buyer_country	cpv_code	product_description	quantity	estimated_value	currency	publication_date	submission_deadline	number_of_lots	framework_agreement
+
+Rules:
+- procedure_id: the "Procedure identifier", copied exactly.
+- notice_id: the "Notice publication number", e.g. 688749-2026.
+- lot_id: the lot identifier exactly as shown, e.g. LOT-0001. One row per lot.
+- buyer_name: official name from the Buyer section only.
+- buyer_country: country name in English only, no region or code.
+- cpv_code: the lot's main CPV code, 8 digits, without its description.
+- product_description: the lot's Title, copied exactly.
+- quantity: number of units for the lot if stated; otherwise leave empty.
+- estimated_value: the lot's estimated value excluding VAT, digits with a dot as decimal mark and no thousand separators (e.g. 184041.00); empty if not stated.
+- currency: 3-letter code, e.g. EUR; empty if no value.
+- publication_date: yyyy-mm-dd.
+- submission_deadline: yyyy-mm-dd hh:mm +hh:mm (24-hour time, UTC offset as shown).
+- number_of_lots: total number of lots in the notice.
+- framework_agreement: Y or N, from the lot's "Framework agreement" field.
+- If information is not in the notice, leave the cell empty. Do not guess.
+
+Notice text:
