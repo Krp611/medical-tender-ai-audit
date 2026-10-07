@@ -3,6 +3,7 @@
 An audit of how accurately an AI model extracts structured, lot-level data from EU public procurement notices for medical products, measured against a hand-built ground truth.
 
 **Tools:** Google Sheets (REGEXREPLACE, REGEXEXTRACT, COUNTIF/COUNTIFS, EXACT), EU TED portal, Gemini Flash-Lite
+
 **Workbook tabs:** `data_dictionary`, `sources`, `ground_truth`, `ai_run1`, `ai_run2`, comparison tabs, `errors`, `summary`
 
 ---
